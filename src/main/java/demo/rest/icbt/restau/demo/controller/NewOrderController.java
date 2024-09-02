@@ -1,20 +1,20 @@
 package demo.rest.icbt.restau.demo.controller;
 
-import demo.rest.icbt.restau.demo.model.Order;
-import demo.rest.icbt.restau.demo.repo.OrderRepo;
+import demo.rest.icbt.restau.demo.model.NewOrder;
+import demo.rest.icbt.restau.demo.repo.NewOrderRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class OrderController {
+public class NewOrderController {
 
     @Autowired
-    private OrderRepo orderRepo;
+    private NewOrderRepo newOrderRepo;
 
-    @PostMapping("/order")
-    Order newOder(@RequestBody Order newOrder){
-        return orderRepo.save(newOrder);
+    @PostMapping("/orders")
+    NewOrder createOrder(@RequestBody NewOrder createOrder){
+        return newOrderRepo.save(createOrder);
     }
 }

@@ -12,11 +12,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Order {
+public class NewOrder {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-
     private Long orderId;
     private Long userId;
+    private Long orderTotal;
+    private String orderStatus;
+    private String paymentStatus;
 }
